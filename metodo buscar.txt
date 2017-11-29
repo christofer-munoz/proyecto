@@ -1,9 +1,9 @@
-Método buscar
+MÃ©todo buscar
 	
 	String buscar = txt_buscar.getText();
         String tipo = cmb_tipo.getSelectedItem().toString();
 
-        Aquí pone tu conexión
+        AquÃ­ pone tu conexiÃ³n
             
             switch (tipo) {
                 case "Codigo":
@@ -154,15 +154,5 @@ Método buscar
                         Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
                     }   break;
             } 
-
-            stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select Codigo_producto from inventario WHERE Codigo_producto = '" + txt_buscar + "' ");
-            while (rs.next()) {
-                String Codigo_producto = rs.getString("Codigo_producto");
-                if (buscar.equals(Codigo_producto)) {
-
-                }
-            }
-
         } catch (SQLException e) {
         }
