@@ -1,0 +1,168 @@
+Método buscar
+	
+	String buscar = txt_buscar.getText();
+        String tipo = cmb_tipo.getSelectedItem().toString();
+
+        Aquí pone tu conexión
+            
+            switch (tipo) {
+                case "Codigo":
+                    try {
+                        stmt = con.createStatement();
+                        ResultSet rs = stmt.executeQuery("SELECT * FROM inventario WHERE Codigo_producto = '" + buscar + "' ");
+                        
+                        try {
+                            if (rs.next()) {
+                                String Codigo_producto = rs.getString("Codigo_producto");
+                                String Id_producto = rs.getString("Id_producto");
+                                String Nombre_producto = rs.getString("Nombre_producto");
+                                String Nombre_corto = rs.getString("Nombre_corto");
+                                String Precio_venta = rs.getString("Precio_venta");
+                                String Precio_compra = rs.getString("Precio_compra");
+                                String Cantidad = rs.getString("Cantidad");
+                                String Largo = rs.getString("Largo");
+                                String Ancho = rs.getString("Ancho");
+                                String Alto = rs.getString("Alto");
+                                String Descripcion = rs.getString("Descripcion");
+                                String EAN = rs.getString("EAN");
+                                String Ubicacion = rs.getString("Ubicacion");
+                                if (buscar.equals(Codigo_producto)) {
+                                    
+                                    FichaBodega fch = new FichaBodega();
+                                    fch.setVisible(true);
+                                    
+                                    FichaBodega.lbl_id.setText(Id_producto);
+                                    FichaBodega.txt_codigoProducto.setText(Codigo_producto);
+                                    FichaBodega.txt_nombreProducto.setText(Nombre_producto);
+                                    FichaBodega.txt_nombreCorto.setText(Nombre_corto);
+                                    FichaBodega.txt_precioVenta.setText(Precio_venta);
+                                    FichaBodega.txt_precioCompra.setText(Precio_compra);
+                                    FichaBodega.txt_cantidad.setText(Cantidad);
+                                    FichaBodega.txt_largo.setText(Largo);
+                                    FichaBodega.txt_ancho.setText(Ancho);
+                                    FichaBodega.txt_alto.setText(Alto); 
+                                    FichaBodega.txt_descripcion.setText(Descripcion);
+                                    FichaBodega.txt_ean.setText(EAN);
+                                    FichaBodega.txt_ubicacion.setText(Ubicacion);
+                                }
+                            } else {
+                                javax.swing.JOptionPane.showMessageDialog(this, "NO SE ENCONTRARON COINCIDENCIAS \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                                txt_buscar.setText(null);
+                            }
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                case "Nombre":
+                    try {
+                        stmt = con.createStatement();
+                        ResultSet rs = stmt.executeQuery("SELECT * FROM inventario WHERE Nombre_producto = '" + buscar + "' ");
+                        
+                        try {
+                            if (rs.next()) {
+                                String Codigo_producto = rs.getString("Codigo_producto");
+                                String Id_producto = rs.getString("Id_producto");
+                                String Nombre_producto = rs.getString("Nombre_producto");
+                                String Nombre_corto = rs.getString("Nombre_corto");
+                                String Precio_venta = rs.getString("Precio_venta");
+                                String Precio_compra = rs.getString("Precio_compra");
+                                String Cantidad = rs.getString("Cantidad");
+                                String Largo = rs.getString("Largo");
+                                String Ancho = rs.getString("Ancho");
+                                String Alto = rs.getString("Alto");
+                                String Descripcion = rs.getString("Descripcion");
+                                String EAN = rs.getString("EAN");
+                                String Ubicacion = rs.getString("Ubicacion");
+                                if (buscar.equals(Nombre_producto)) {
+                                    
+                                    FichaBodega fch = new FichaBodega();
+                                    fch.setVisible(true);
+                                    
+                                    FichaBodega.lbl_id.setText(Id_producto);
+                                    FichaBodega.txt_codigoProducto.setText(Codigo_producto);
+                                    FichaBodega.txt_nombreProducto.setText(Nombre_producto);
+                                    FichaBodega.txt_nombreCorto.setText(Nombre_corto);
+                                    FichaBodega.txt_precioVenta.setText(Precio_venta);
+                                    FichaBodega.txt_precioCompra.setText(Precio_compra);
+                                    FichaBodega.txt_cantidad.setText(Cantidad);
+                                    FichaBodega.txt_largo.setText(Largo);
+                                    FichaBodega.txt_ancho.setText(Ancho);
+                                    FichaBodega.txt_alto.setText(Alto); 
+                                    FichaBodega.txt_descripcion.setText(Descripcion);
+                                    FichaBodega.txt_ean.setText(EAN);
+                                    FichaBodega.txt_ubicacion.setText(Ubicacion);
+                                }
+                            } else {
+                                javax.swing.JOptionPane.showMessageDialog(this, "NO SE ENCONTRARON COINCIDENCIAS \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                                txt_buscar.setText(null);
+                            }
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+                default:
+                    try {
+                        stmt = con.createStatement();
+                        ResultSet rs = stmt.executeQuery("SELECT * FROM inventario WHERE EAN = '" + buscar + "' ");
+                        
+                        try {
+                            if (rs.next()) {
+                                String Codigo_producto = rs.getString("Codigo_producto");
+                                String Id_producto = rs.getString("Id_producto");
+                                String Nombre_producto = rs.getString("Nombre_producto");
+                                String Nombre_corto = rs.getString("Nombre_corto");
+                                String Precio_venta = rs.getString("Precio_venta");
+                                String Precio_compra = rs.getString("Precio_compra");
+                                String Cantidad = rs.getString("Cantidad");
+                                String Largo = rs.getString("Largo");
+                                String Ancho = rs.getString("Ancho");
+                                String Alto = rs.getString("Alto");
+                                String Descripcion = rs.getString("Descripcion");
+                                String EAN = rs.getString("EAN");
+                                String Ubicacion = rs.getString("Ubicacion");
+                                if (buscar.equals(EAN)) {
+                                    
+                                    FichaBodega fch = new FichaBodega();
+                                    fch.setVisible(true);
+                                    
+                                    FichaBodega.lbl_id.setText(Id_producto);
+                                    FichaBodega.txt_codigoProducto.setText(Codigo_producto);
+                                    FichaBodega.txt_nombreProducto.setText(Nombre_producto);
+                                    FichaBodega.txt_nombreCorto.setText(Nombre_corto);
+                                    FichaBodega.txt_precioVenta.setText(Precio_venta);
+                                    FichaBodega.txt_precioCompra.setText(Precio_compra);
+                                    FichaBodega.txt_cantidad.setText(Cantidad);
+                                    FichaBodega.txt_largo.setText(Largo);
+                                    FichaBodega.txt_ancho.setText(Ancho);
+                                    FichaBodega.txt_alto.setText(Alto); 
+                                    FichaBodega.txt_descripcion.setText(Descripcion);
+                                    FichaBodega.txt_ean.setText(EAN);
+                                    FichaBodega.txt_ubicacion.setText(Ubicacion);
+                                }
+                            } else {
+                                javax.swing.JOptionPane.showMessageDialog(this, "NO SE ENCONTRARON COINCIDENCIAS \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                                txt_buscar.setText(null);
+                            }
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Inventario.class.getName()).log(Level.SEVERE, null, ex);
+                    }   break;
+            } 
+
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select Codigo_producto from inventario WHERE Codigo_producto = '" + txt_buscar + "' ");
+            while (rs.next()) {
+                String Codigo_producto = rs.getString("Codigo_producto");
+                if (buscar.equals(Codigo_producto)) {
+
+                }
+            }
+
+        } catch (SQLException e) {
+        }
